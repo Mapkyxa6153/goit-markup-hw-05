@@ -284,6 +284,15 @@ img {
 .services-item {
   position: relative;
 }
+.services-item::before {
+  display: inline-block;
+  position: absolute;
+  background: rgba(47, 48, 58, 0.8);
+  content: '';
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+}
 .service-description {
   position: absolute;
   right: 82px;
@@ -561,6 +570,63 @@ img {
 .works-wrapper {
   padding: 20px 24px;
 }
+.works-image {
+  position: relative;
+}
+.works-image::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+.works-examples:hover .works-image::before {
+  opacity: 1;
+}
+.works-examples:focus .works-image::before {
+  opacity: 1;
+}
+.works-text {
+  position: absolute;
+  top: 63px;
+  bottom: 63px;
+  left: 24px;
+  right: 24px;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+
+  letter-spacing: 0.03em;
+
+  color: var(--background-color);
+
+  opacity: 0;
+}
+.works-examples:hover .works-text {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 1;
+}
+.works-examples:focus .works-text {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 1;
+}
+
+/* .works-image:hover::before {
+  opacity: 1;
+} */
+
+/* .works-text:hover {
+  opacity: 1;
+}
+
+/* Conatainer for all sections */
 
 .container {
   width: 1200px;
