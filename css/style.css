@@ -98,6 +98,7 @@ img {
   content: '';
   width: auto;
   height: 4px;
+
   background-color: var(--akcent-text-color);
   display: flex;
 
