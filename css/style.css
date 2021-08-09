@@ -94,6 +94,15 @@ img {
 .site-nav .link.current {
   color: var(--akcent-text-color);
 }
+.site-nav .link.current::after {
+  content: '';
+  width: auto;
+  height: 4px;
+  background-color: var(--akcent-text-color);
+  display: flex;
+
+  border-radius: 2px;
+}
 
 /* contacts */
 .site-contacts {
@@ -194,8 +203,6 @@ img {
 }
 .hero-button {
   padding: 10px 32px;
-  color: var(--background-color);
-  background-color: var(--akcent-text-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
@@ -203,6 +210,8 @@ img {
   cursor: pointer;
   border-radius: 4px;
   border: 0px;
+  color: var(--background-color);
+  background-color: var(--akcent-text-color);
 }
 
 /* strengths */
@@ -619,6 +628,9 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 
+  display: flex;
+  justify-content: flex-end;
+
   width: 528px;
   height: 581px;
 
@@ -626,6 +638,22 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: var(--background-color);
+}
+
+.close-btn {
+  margin-right: 8px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  background-color: var(--background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 /* Conatainer for all sections */
