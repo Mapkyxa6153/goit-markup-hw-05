@@ -12,7 +12,6 @@
   --background-color: #ffffff;
   --background-color-secondary: #2f303a;
   --background-color-tertiary: #f5f4fa;
-  --btn-color: #f5f4fa;
 }
 
 body {
@@ -80,12 +79,15 @@ img {
 }
 
 .site-nav .link {
-  color: var(--primary-text-color);
   letter-spacing: 0.02em;
   font-size: 14px;
   line-height: 1.14;
   font-weight: 500;
   text-decoration: none;
+
+  color: var(--primary-text-color);
+
+  transition: color 1250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -98,6 +100,7 @@ img {
   content: '';
   width: auto;
   height: 4px;
+  transform: translateY(30px);
 
   background-color: var(--akcent-text-color);
   display: flex;
@@ -121,20 +124,21 @@ img {
   text-align: center;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--secondary-text-colort);
-  fill: var(--secondary-text-colort);
+  align-items: center;
+
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+
+  color: var(--secondary-text-colort);
+  fill: var(--secondary-text-colort);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-links:hover,
 .contacts-links:focus {
   color: var(--akcent-text-color);
   fill: var(--akcent-text-color);
-}
-
-.contacts-links {
-  align-items: center;
 }
 
 /* buttons */
@@ -146,8 +150,7 @@ img {
 
 .button {
   padding: 6px 22px;
-  color: var(--primary-text-color);
-  background: var(--btn-color);
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
@@ -155,6 +158,12 @@ img {
   cursor: pointer;
   border: 0px;
   border-radius: 4px;
+
+  color: var(--primary-text-color);
+  background: var(--background-color-tertiary);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 1250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-item {
   margin-left: 8px;
@@ -389,6 +398,9 @@ img {
   border-radius: 50%;
   margin-right: 10px;
   fill: #afb1b8;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:last-child {
   margin-right: 0px;
@@ -425,6 +437,9 @@ img {
   align-items: center;
   fill: #afb1b8;
   border: 1px solid #afb1b8;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-icon {
@@ -434,7 +449,6 @@ img {
 }
 .customer-link:hover {
   fill: var(--akcent-text-color);
-  color: var(--akcent-text-color);
   border-color: var(--akcent-text-color);
 }
 .customer-link:focus {
@@ -467,7 +481,6 @@ img {
   color: var(--akcent-text-color);
 }
 .address .link {
-  color: var(--secondary-text-colort);
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -475,6 +488,10 @@ img {
   line-height: 1.71;
   text-decoration: none;
   letter-spacing: 0.03em;
+
+  color: var(--secondary-text-colort);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link.specific-address {
   color: var(--background-color);
@@ -537,6 +554,7 @@ img {
   text-decoration: none;
   display: block;
 }
+
 .works-examples .link:hover,
 .works-examples .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -572,17 +590,17 @@ img {
   height: 100%;
 
   background-color: rgba(33, 150, 243, 0.9);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   opacity: 0;
 }
-.works-examples .link:hover .works-image::before {
-  transition: 250ms;
 
-  opacity: 1;
-}
+.works-examples .link:hover .works-image::before,
 .works-examples .link:focus .works-image::before {
   opacity: 1;
 }
+
 .works-text {
   position: absolute;
   top: 63px;
@@ -598,16 +616,14 @@ img {
 
   color: var(--background-color);
 
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   opacity: 0;
 }
 .works-examples .link:hover .works-text {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   opacity: 1;
 }
 .works-examples .link:focus .works-text {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   opacity: 1;
 }
 /* Modal window */
