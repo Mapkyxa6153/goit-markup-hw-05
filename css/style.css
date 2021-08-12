@@ -596,29 +596,28 @@ img {
   overflow: hidden;
   position: relative;
 }
-.works-image::before {
-  display: inline-block;
+.works-overlay {
+  top: 0;
+  left: 0;
   position: absolute;
-  content: '';
+
   width: 100%;
   height: 100%;
-  top: 100%;
+  transform: translateY(100%);
 
   background-color: rgba(33, 150, 243, 0.9);
 
   transition: transform 250ms var(--timing-function);
 }
-
-.works-examples .link:hover .works-image::before,
-.works-examples .link:focus .works-image::before {
-  transform: translateY(-100%);
+.works-examples .link:hover .works-overlay,
+.works-examples .link:focus .works-overlay {
+  transform: translateY(0);
 }
 
 .works-text {
   position: absolute;
   left: 24px;
   bottom: 63px;
-  transform: translateY(170%);
 
   font-weight: normal;
   font-size: 18px;
@@ -629,10 +628,6 @@ img {
   color: var(--background-color);
 
   transition: transform 250ms var(--timing-function);
-}
-.works-examples .link:hover .works-text,
-.works-examples .link:focus .works-text {
-  transform: translateY(0);
 }
 
 /* Modal window */
